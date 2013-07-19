@@ -1,0 +1,4 @@
+limit stream to 1 per twitter user, it is now only limited to 1 per application user
+add write support
+implement reconnect features to twitter stream
+keep last read as it is when moving away from page, if last read is not on the screen.

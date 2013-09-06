@@ -1,9 +1,9 @@
 body{
-	font-family: 'PT Sans', sans-serif;
-	font-size: 150%;
-	color:#C0C0C0;
-	margin: 0;
-	background-color: #33b5e5;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 150%;
+    color:#C0C0C0;
+    margin: 0;
+    background-color: #33b5e5;
 }
 
 div#main {
@@ -11,219 +11,229 @@ div#main {
 }
 
 div#river {
-	width: 100%;
-	background-color: #121417;
+    width: 100%;
+    background-color: #121417;
 }
 
 div#menubox {
-	width: 100%;
-	height: 80px;
-	background: #252a30;
-	border-bottom: 1px solid #222;
+    width: 100%;
+    height: 80px;
+    background: #252a30;
+    border-bottom: 1px solid #222;
 }
 
 div.control-box {
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	min-width: 1000px;
-	width: 1000px;
-	height: inherit;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 1000px;
+    width: 1000px;
+    height: inherit;
 }
 
 div.write-button {
-	position:absolute;
-	top: 45px;
-	left: 467px;
-	width: auto;
-	background: #252a30;
-	/*border: solid 2px #121417;*/
-	text-align: center;
-	z-index: 15;
+    position:absolute;
+    top: 45px;
+    left: 467px;
+    width: auto;
+    background: #252a30;
+    /*border: solid 2px #121417;*/
+    text-align: center;
+    z-index: 15;
 }
 
 div.last-read-button {
-	display: none;
-	position: absolute;
-	top: 45px;
-	right: 5px;
-	width: auto;
-	background: #252a30;
-	z-index: 15;
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 5px;
+    width: auto;
+    background: #252a30;
+    z-index: 15;
 }
 
 div.twitter-button {
-	position: absolute;
-	left: 421px;
-	top: 45px;
-	width: 158px;
-	height: 29px;
-	z-index: 16;
+    position: absolute;
+    left: 421px;
+    top: 45px;
+    width: 158px;
+    height: 29px;
+    z-index: 16;
 }
 
 div#msgbox {
-	position: relative;
-	top: 5px;
-	margin-left: auto;
-	margin-right: auto;
-	min-width: 1000px;
-	width: 1000px;
-	border: 1px solid #33b5e5;
+    position: relative;
+    top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 1000px;
+    width: 1000px;
+    border-bottom: 2px dashed rgb(37, 42, 48);
+}
+
+div#msgbox fieldset {
+    position: absolute;
+    left: 65px;
+}
+
+div#msgbox textarea {
+    height: 70px;
 }
 
 div#stream {
-	position: relative;
-	top: 10px;
-	margin-left: auto;
-	margin-right: auto;
-	min-width: 1000px;
-	width: 1000px;
-	min-height: 1000px;
-	position: relative;
-	text-align: justify;
-	background: #121417;
-	border: dashed 1px #33b5e5;
+    position: relative;
+    top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 1000px;
+    width: 1000px;
+    min-height: 1000px;
+    position: relative;
+    text-align: justify;
+    background: #121417;
 }
 
 .content {
-	display: block;
-	height: 100%;
+    display: block;
+    height: 100%;
 }
 
 .tweet:hover .timeago {
-	display: block;
+    opacity: 1.0;
 }
 
 .tweet:hover .control {
-	 display: block;
+     display: block;
 }
 
 .control {
-	clear: both;
-	display: none;
-	position: relative;
-	float: right;
-	bottom: 94px;
-	right: 6px;
-	font-size: 50%
+    clear: both;
+    display: none;
+    position: relative;
+    float: right;
+    bottom: 94px;
+    right: 6px;
+    font-size: 50%
 }
 
 .tweet {
-	/*border-bottom: solid 1px #33b5e5;*/
-	border-bottom: dashed 2px #252a30;
-	height: 65px;
-	width: 100%;
+    /*border-bottom: solid 1px #33b5e5;*/
+    border-bottom: dashed 2px #252a30;
+    height: 96px;
+    width: 100%;
+    position: relative;
 }
 
 .retweet {
-	/*background: #252a30 !important;*/
+    /*background: #252a30 !important;*/
 }
 
 .user {
-	position: relative;
-	left: 35px;
-	bottom: 25px;
-	font-size: 70%;
-	width: auto;
-	/*border: solid 1px red;*/
+    position: absolute;
+    left: 83px;
+    top: 6px;
+    font-size: 70%;
+    width: auto;
+    /*border: solid 1px red;*/
 }
 
 .user-retweet {
-	position: relative;
-	bottom: 25px;
-	font-size: 70%;
-	width: auto;
-	/*border: solid 1px red;*/	
+    position: absolute;
+    top: 5px;
+    left: 81px;
+    font-size: 70%;
+    width: auto;
+    /*border: solid 1px red;*/  
 }
 .avatar {
-	float: left;
-	position: relative;
-	left: 10px;
-	bottom: 17px;
-	width: 48px;
-	height: 48px;
-	box-shadow: 0px 0px 20px #33b5e5;
+    float: left;
+    position: absolute;
+    left: 10px;
+    top: 14px;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0px 0px 20px #33b5e5;
 }
 
 .retweeter {
-	float: left;
-	position: relative;
-	left: -8px;
-	bottom: -18px;
-	width: 25px;
-	height: 25px;
-	z-index: 5;
-	border: solid 1px black;
+    float: left;
+    position: absolute;
+    left: 40px;
+    top: 49px;
+    width: 25px;
+    height: 25px;
+    z-index: 5;
+    border: solid 1px black;
+    box-shadow: 0px 0px 5px #33b5e5;
 }
 
 .message {
-	clear: both;
-	position: relative;
-	width: 800px;
-	left: 80px;
-	bottom: 35px;
-	font-size: 70%;
-	text-align: left;
-	/*border: solid 1px red;*/
+    clear: both;
+    position: absolute;
+    width: 800px;
+    left: 83px;
+    top: 38px;
+    font-size: 70%;
+    text-align: left;
+    /*border: solid 1px red;*/
 }
 
 .timeago {
-	clear: both;
-	display: none;
-	position: relative;
-	float: right;
-	bottom: 49px;
-	right: 5px;
-	font-size: 50%
+    clear: both;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 50%;
+    opacity: 0.15;
 }
 
 .last-unread {
-	border-bottom: solid 1px #33b5e5;
+    border-bottom: solid 1px #33b5e5;
 }
 
 
 fieldset {
-	border: none;
+    border: none;
 }
 
 textarea {
-	resize: none;
+    resize: none;
 }
 
 .characters {
-	position: relative;
-	text-align: right;
-	bottom: 44px;
-	left: 300px;
-	width: 40px;
+    position: relative;
+    text-align: right;
+    bottom: 44px;
+    left: 300px;
+    width: 40px;
 }
 
 .send-button {
-	position: relative;
-	bottom: 40px;
-	right: 20px;
-	width: 80px;
-	line-height: 15px;
-	padding: 5px 0;
-	border: 1px solid #888;
-	cursor: pointer;
-	-webkit-border-radius: 5px;
-	-webkit-transform: rotate(-91deg);
+    position: absolute;
+    bottom: 51px;
+    left: 365px;
+    width: 80px;
+    line-height: 15px;
+    padding: 5px 0;
+    border: 1px solid #888;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    -webkit-transform: rotate(-91deg);
 }
 
 .magical {
-	margin-top: 100px;
+    margin-top: 100px;
 }
 
 .hidden {
-	display: none;
+    display: none;
 }
 
 .deleted {
-	text-decoration: line-through;
+    text-decoration: line-through;
 }
 
 a {
-	color: #33b5e5;
-	text-decoration: none;
+    color: #33b5e5;
+    text-decoration: none;
 }

@@ -238,7 +238,8 @@ var River = function() {
             var twitter_data = data_object;
             //console.log(data_object[0]);
             console.log('Created at: %s',twitter_data.created_at);
-            $('#stream').prepend('<div id="'+twitter_data.id_str+'" class="tweet hidden"><div id="content" class="content"><img class="avatar" src="' + twitter_data.user.profile_image_url_https +'"><div class="user"> '+ twitter_data.user.name +' (<a href="https://twitter.com/'+ twitter_data.user.screen_name +'" target="_blank">@'+ twitter_data.user.screen_name +'</a>)</div><div class="message">'+ twttr.txt.autoLink(twitter_data.text, { urlEntities: twitter_data.entities.urls }) +'</div></div><a href="https://twitter.com/'+twitter_data.user.screen_name +'/status/'+ twitter_data.id_str +'" target="_blank" class="control">open</a><a href="https://twitter.com/intent/tweet?in_reply_to='+ twitter_data.id_str +'" class="control">reply</a><abbr class="timeago" title="'+ moment(twitter_data.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY").format("ddd MMM DD HH:mm:ss YYYY") +'" data-livestamp="'+ moment(twitter_data.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY").format("X") +'"></abbr></div></div>');
+            $('#stream').prepend('<div id="'+twitter_data.id_str+'" class="tweet hidden"><div id="content" class="content"><img class="avatar" src="' + twitter_data.user.profile_image_url_https +'"><div class="user"> '+ twitter_data.user.name +' (<a href="https://twitter.com/'+ twitter_data.user.screen_name +'" target="_blank">@'+ twitter_data.user.screen_name +'</a>)</div><div class="message">'+ twttr.txt.autoLink(twitter_data.text, { urlEntities: twitter_data.entities.urls }) +'</div></div><a href="https://twitter.com/'+twitter_data.user.screen_name +'/status/'+ twitter_data.id_str +'" target="_blank" class="control open">open</a><a href="https://twitter.com/intent/tweet?in_reply_to='+ twitter_data.id_str +'" class="control reply">reply</a><abbr class="timeago" title="'+ moment(twitter_data.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY").format("ddd MMM DD HH:mm:ss YYYY") +'" data-livestamp="'+ moment(twitter_data.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY").format("X") +'"></abbr></div></div>');
+            AutoSize(twitter_data.id_str);
             $('#'+twitter_data.id_str).fadeIn();
             setTitle();
             ScrollFixed();
@@ -249,10 +250,19 @@ var River = function() {
             var twitter_data = data;
             console.log('RETWEET');
             console.log(data);
-            $('#stream').prepend('<div id="'+twitter_data.retweeted_status.id_str+'" class="tweet retweet hidden"><div class="content"><img class="avatar" src="'+ twitter_data.retweeted_status.user.profile_image_url_https +'"><img class="retweeter" src="'+ twitter_data.user.profile_image_url_https +'"><div class="user-retweet"><img src="img/retweet.png"> '+ twitter_data.retweeted_status.user.name +' (<a href="https://twitter.com/'+ twitter_data.retweeted_status.user.screen_name +'" target="_blank">@'+ twitter_data.retweeted_status.user.screen_name +'</a>) by <a href="https://twitter.com/'+ twitter_data.user.screen_name +'" target="_blank">@'+ twitter_data.user.screen_name +'</a></div><div class="message">'+ twttr.txt.autoLink(twitter_data.retweeted_status.text, { urlEntities: twitter_data.retweeted_status.entities.urls }) +'</div></div><a href="https://twitter.com/'+twitter_data.user.screen_name +'/status/'+ twitter_data.id_str +'" target="_blank" class="control">open</a><a href="https://twitter.com/intent/tweet?in_reply_to='+ twitter_data.id_str +'" class="control">reply</a><abbr class="timeago" title="'+ moment(twitter_data.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY").format("ddd MMM DD HH:mm:ss YYYY") +'" data-livestamp="'+ moment(twitter_data.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY").format("X") +'"></abbr></div>');
+            $('#stream').prepend('<div id="'+twitter_data.retweeted_status.id_str+'" class="tweet retweet hidden"><div class="content"><img class="avatar" src="'+ twitter_data.retweeted_status.user.profile_image_url_https +'"><img class="retweeter" src="'+ twitter_data.user.profile_image_url_https +'"><div class="user-retweet"><img src="img/retweet.png"> '+ twitter_data.retweeted_status.user.name +' (<a href="https://twitter.com/'+ twitter_data.retweeted_status.user.screen_name +'" target="_blank">@'+ twitter_data.retweeted_status.user.screen_name +'</a>) by <a href="https://twitter.com/'+ twitter_data.user.screen_name +'" target="_blank">@'+ twitter_data.user.screen_name +'</a></div><div class="message">'+ twttr.txt.autoLink(twitter_data.retweeted_status.text, { urlEntities: twitter_data.retweeted_status.entities.urls }) +'</div></div><a href="https://twitter.com/'+twitter_data.user.screen_name +'/status/'+ twitter_data.id_str +'" target="_blank" class="control open">open</a><a href="https://twitter.com/intent/tweet?in_reply_to='+ twitter_data.id_str +'" class="control reply">reply</a><abbr class="timeago" title="'+ moment(twitter_data.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY").format("ddd MMM DD HH:mm:ss YYYY") +'" data-livestamp="'+ moment(twitter_data.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY").format("X") +'"></abbr></div>');
+            AutoSize(twitter_data.retweeted_status.id_str);
             $('#'+twitter_data.retweeted_status.id_str).fadeIn();
             setTitle();
             ScrollFixed();
+        },
+
+        AutoSize = function(tweet_id_str) {
+            var height = $('div#'+tweet_id_str).children('#content').children('.message').height();
+            if(height > 44) {
+                $('div#'+tweet_id_str).css("height", 96 + ( height - 44));
+                $('div#'+tweet_id_str).css("min-height", 96 + ( height - 44));
+            }
         },
         
         Delete = function(id) {

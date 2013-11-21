@@ -259,6 +259,15 @@ var River = function() {
 
         AutoSize = function(tweet_id_str) {
             var height = $('div#'+tweet_id_str).children('#content').children('.message').height();
+
+            //Firefox Workaround
+            if(height <= 0) {
+                var ghostElement = $('div#'+tweet_id_str).children('#content').children('.message').clone().attr("id", false).css({visibility:"hidden", display:"block", position:"absolute"});
+                $("body").append(ghostElement);
+                height = ghostElement.height();
+                ghostElement.remove();
+            }
+
             if(height > 44) {
                 $('div#'+tweet_id_str).css("height", 96 + ( height - 44));
                 $('div#'+tweet_id_str).css("min-height", 96 + ( height - 44));

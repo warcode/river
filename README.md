@@ -5,6 +5,6 @@ Front-end for https://deny.io/river
 
 
 
-River
+What
 -----
 Javascript/NodeJS streaming twitter client using socket.io

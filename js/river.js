@@ -45,6 +45,7 @@ var River = function() {
             success: function(data, status, jqXHR) {
                 if(jqXHR.status === 201) {
                     localStorage.setItem('warcode.river.user.login_token', data.login_token);
+                    user.login_token = data.login_token;
                     user.hasTwitterAuth = data.hasTwitterAuth;
                     if(user.hasTwitterAuth) {
                         $('.twitter-button').hide();
@@ -82,7 +83,12 @@ var River = function() {
     },
 
     OAuth = function() {
-        window.location = 'https://deny.io/river/oauth/login?login_token='+user.login_token;
+        if(user.login_token) {
+            window.location = 'https://deny.io/river/oauth/login?login_token='+user.login_token;
+        } else {
+            user.login_token = localStorage.getItem('warcode.river.user.login_token');
+            window.location = 'https://deny.io/river/oauth/login?login_token='+user.login_token;
+        }
     },
 
     Timeline = function() {

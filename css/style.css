@@ -89,6 +89,16 @@ div#msgbox textarea {
     width: 700px;
 }
 
+.msgbox-username {
+    position: absolute;
+    left: 83px;
+    top: 6px;
+    font-size: 70%;
+    width: auto;
+    font-family: 'PT Sans',sans-serif;
+    color: #C0C0C0;
+}
+
 div#stream {
     position: relative;
     top: 10px;

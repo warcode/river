@@ -294,6 +294,8 @@ var River = function() {
                 },
                 dataType: 'json',
                 success: function(data, status, jqHXR) {
+                    $("textarea#status").val('');
+                    $('#msgbox').slideToggle(250);
                     /*
                     if(jqXHR.status === 201) {
                         //Tweeted that fine message

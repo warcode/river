@@ -17,7 +17,7 @@ var River = function() {
         $('#last-read-control').click(function(){
             River.Scroll();
         });
-        $('#msgbox').html('<div class="">You (@username)</div><fieldset><textarea name="status" id="status" rows="5" cols="40" class="" placeholder="Your Tweet…" autocomplete="off"></textarea><input type="submit" value="SEND" class="send-button"><div class="characters">140</div></fieldset>');
+        $('#msgbox').html('<div class="msgbox-username">You (@username)</div><fieldset><textarea name="status" id="status" rows="5" cols="40" class="" placeholder="Click here to write your message." autocomplete="off"></textarea><div class="msgbox-sendbutton"><a href="#" onclick="River.Tweet.Send();">SEND</></div><div class="characters">140</div></fieldset>');
         $('#status').on('input', function() {
             var count = 140 - $('#status').val().length;
             $('.characters').html(count.toString());

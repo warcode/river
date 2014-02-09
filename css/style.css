@@ -99,6 +99,11 @@ div#msgbox textarea {
     color: #C0C0C0;
 }
 
+.msgbox-sendbutton {
+    color: #33B5E5;
+    text-decoration: none;
+}
+
 div#stream {
     position: relative;
     top: 10px;

@@ -74,11 +74,19 @@ div#msgbox {
 
 div#msgbox fieldset {
     position: absolute;
-    left: 65px;
+    left: 70px;
+    height: 96px !important;
+    width: 700px;
+    top: 30px;
 }
 
 div#msgbox textarea {
-    height: 70px;
+    height: 50px;
+    background: none repeat scroll 0% 0% #121417;
+    border: 0px none;
+    color: #C0C0C0;
+    top: 10px;
+    width: 700px;
 }
 
 div#stream {
@@ -217,15 +225,15 @@ textarea {
 .characters {
     position: relative;
     text-align: right;
-    bottom: 44px;
-    left: 300px;
+    bottom: 30px;
+    left: 660px;
     width: 40px;
 }
 
 .send-button {
     position: absolute;
-    bottom: 51px;
-    left: 365px;
+    bottom: 63px;
+    left: 728px;
     width: 80px;
     line-height: 15px;
     padding: 5px 0;

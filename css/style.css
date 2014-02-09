@@ -69,6 +69,7 @@ div#msgbox {
     min-width: 1000px;
     width: 1000px;
     border-bottom: 2px dashed rgb(37, 42, 48);
+    height: 96px;
 }
 
 div#msgbox fieldset {

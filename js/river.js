@@ -294,12 +294,13 @@ var River = function() {
                 },
                 dataType: 'json',
                 success: function(data, status, jqHXR) {
+                    /*
                     if(jqXHR.status === 201) {
                         //Tweeted that fine message
                     } else {
                         $('#stream').prepend('<div id="stream-start" class="tweet">Could not send tweet. Twitter\'s fault.</div>');
                     }
-
+                    */
                 }
             });
         };

@@ -282,12 +282,33 @@ var River = function() {
         
         Delete = function(id) {
             $('#'+id).children('#content').children('.message').addClass('deleted');
+        },
+
+        Send = function() {
+            $.ajax({
+                type: "POST",
+                url: "https://deny.io/river/user/tweet",
+                data: {
+                    login_token: user.login_token,
+                    message: $("textarea#status").val()
+                },
+                dataType: 'json',
+                success: function(data, status, jqHXR) {
+                    if(jqXHR.status === 201) {
+                        //Tweeted that fine message
+                    } else {
+                        $('#stream').prepend('<div id="stream-start" class="tweet">Could not send tweet. Twitter\'s fault.</div>');
+                    }
+
+                }
+            });
         };
 
         return {
             Add: Add,
             AddReTweet: AddReTweet,
-            Delete: Delete
+            Delete: Delete,
+            Send: Send
         };
     }();
 

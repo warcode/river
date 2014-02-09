@@ -86,7 +86,7 @@ div#msgbox textarea {
     border: 0px none;
     color: #C0C0C0;
     top: 10px;
-    width: 700px;
+    width: 781px;
 }
 
 .msgbox-username {
@@ -102,6 +102,11 @@ div#msgbox textarea {
 .msgbox-sendbutton {
     color: #33B5E5;
     text-decoration: none;
+    width: auto;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    font-size: 155%;
 }
 
 div#stream {
@@ -241,7 +246,7 @@ textarea {
     position: relative;
     text-align: right;
     bottom: 30px;
-    left: 660px;
+    left: 737px;
     width: 40px;
 }
 

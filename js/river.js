@@ -290,7 +290,7 @@ var River = function() {
                 url: "https://deny.io/river/user/tweet",
                 data: {
                     login_token: user.login_token,
-                    message: escape($("textarea#status").val())
+                    message: $("textarea#status").val()
                 },
                 dataType: 'json',
                 success: function(data, status, jqHXR) {

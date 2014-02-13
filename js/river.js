@@ -147,24 +147,22 @@ var River = function() {
 
             socket.on('rise-accepted', function (data) {
                 Stream();
+            });
 
-                socket.on('tweet', function (data) {
-                    Tweet.Add(data);
-                    //setTitle();
-                });
+            socket.on('tweet', function (data) {
+                Tweet.Add(data);
+            });
 
-                socket.on('retweet', function (data) {
-                    Tweet.AddReTweet(data);
-                    //setTitle();
-                });
+            socket.on('retweet', function (data) {
+                Tweet.AddReTweet(data);
+            });
 
-                socket.on('delete', function (data) {
-                    Tweet.Delete(data.delete.status.id_str);
-                });
+            socket.on('delete', function (data) {
+                Tweet.Delete(data.delete.status.id_str);
+            });
 
-                socket.on('end', function (data) {
-                    $('#stream').prepend('<div id="stream-stop" class="tweet">STREAM END (TWITTER FAILED)</div>');
-                });
+            socket.on('end', function (data) {
+                $('#stream').prepend('<div id="stream-stop" class="tweet">STREAM END (TWITTER FAILED)</div>');
             });
         }
     },

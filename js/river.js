@@ -279,14 +279,10 @@ var River = function() {
 
             }
                 
-
             AutoSize(twitter_data.retweeted_status.id_str, isEmbed);
             $('#'+twitter_data.retweeted_status.id_str).fadeIn();
             setTitle();
             ScrollFixed();
-            }
-            }
-            }
         },
 
         AutoSize = function(tweet_id_str, imageEmbed) {

@@ -15,9 +15,10 @@ Supports
 * Replying to tweets (through external link)
 * Retweets (viewing)
 * Deleted tweets
+* Inline images
 
 Planned
 * Options
-* Inline images
+* Reply clustering
 * Multi-line tweet formatting
 * Page personalization based on logged in user

@@ -266,11 +266,27 @@ var River = function() {
             var twitter_data = data;
             //console.log('RETWEET');
             //console.log(data);
-            $('#stream').prepend('<div id="'+twitter_data.retweeted_status.id_str+'" class="tweet retweet hidden"><div class="content"><img class="avatar" src="'+ twitter_data.retweeted_status.user.profile_image_url_https +'"><img class="retweeter" src="'+ twitter_data.user.profile_image_url_https +'"><div class="user-retweet"><img src="img/retweet.png"> '+ twitter_data.retweeted_status.user.name +' (<a href="https://twitter.com/'+ twitter_data.retweeted_status.user.screen_name +'" target="_blank">@'+ twitter_data.retweeted_status.user.screen_name +'</a>) by <a href="https://twitter.com/'+ twitter_data.user.screen_name +'" target="_blank">@'+ twitter_data.user.screen_name +'</a></div><div class="message">'+ twttr.txt.autoLink(twitter_data.retweeted_status.text, { urlEntities: twitter_data.retweeted_status.entities.urls }) +'</div></div><a href="https://twitter.com/'+twitter_data.user.screen_name +'/status/'+ twitter_data.id_str +'" target="_blank" class="control open">open</a><a href="https://twitter.com/intent/tweet?in_reply_to='+ twitter_data.id_str +'" class="control reply">reply</a><abbr class="timeago" title="'+ moment(twitter_data.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY").format("ddd MMM DD HH:mm:ss YYYY") +'" data-livestamp="'+ moment(twitter_data.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY").format("X") +'"></abbr></div>');
-            AutoSize(twitter_data.retweeted_status.id_str, false);
+            var isEmbed = false;
+            if(twitter_data.retweeted_status.entities.media && twitter_data.retweeted_status.entities.media[0]) {
+                //
+                isEmbed = true;
+                $('#stream').prepend('<div id="'+twitter_data.retweeted_status.id_str+'" class="tweet retweet hidden"><div class="content"><img class="avatar" src="'+ twitter_data.retweeted_status.user.profile_image_url_https +'"><img class="retweeter" src="'+ twitter_data.user.profile_image_url_https +'"><div class="user-retweet"><img src="img/retweet.png"> '+ twitter_data.retweeted_status.user.name +' (<a href="https://twitter.com/'+ twitter_data.retweeted_status.user.screen_name +'" target="_blank">@'+ twitter_data.retweeted_status.user.screen_name +'</a>) by <a href="https://twitter.com/'+ twitter_data.user.screen_name +'" target="_blank">@'+ twitter_data.user.screen_name +'</a></div><div class="message">'+ twttr.txt.autoLink(twitter_data.retweeted_status.text, { urlEntities: twitter_data.retweeted_status.entities.urls }) +'</div></div><a href="https://twitter.com/'+twitter_data.user.screen_name +'/status/'+ twitter_data.id_str +'" target="_blank" class="control open">open</a><a href="https://twitter.com/intent/tweet?in_reply_to='+ twitter_data.id_str +'" class="control reply">reply</a><abbr class="timeago" title="'+ moment(twitter_data.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY").format("ddd MMM DD HH:mm:ss YYYY") +'" data-livestamp="'+ moment(twitter_data.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY").format("X") +'"></abbr><div id="imageEmbedContainer" style="position: absolute; left: 90px; border-radius: 5px; bottom: 20px; overflow: hidden; height: 253px; width: 550px; box-shadow: 0 0 10px #33b5e5;"><a target="_blank" href="'+twitter_data.retweeted_status.entities.media[0].media_url_https+'"><img src="'+twitter_data.retweeted_status.entities.media[0].media_url_https+'" style="width: 100%;margin-top: -25%;"></a></div></div>');
+     
+            } else {
+                //
+                isEmbed = false;
+                $('#stream').prepend('<div id="'+twitter_data.retweeted_status.id_str+'" class="tweet retweet hidden"><div class="content"><img class="avatar" src="'+ twitter_data.retweeted_status.user.profile_image_url_https +'"><img class="retweeter" src="'+ twitter_data.user.profile_image_url_https +'"><div class="user-retweet"><img src="img/retweet.png"> '+ twitter_data.retweeted_status.user.name +' (<a href="https://twitter.com/'+ twitter_data.retweeted_status.user.screen_name +'" target="_blank">@'+ twitter_data.retweeted_status.user.screen_name +'</a>) by <a href="https://twitter.com/'+ twitter_data.user.screen_name +'" target="_blank">@'+ twitter_data.user.screen_name +'</a></div><div class="message">'+ twttr.txt.autoLink(twitter_data.retweeted_status.text, { urlEntities: twitter_data.retweeted_status.entities.urls }) +'</div></div><a href="https://twitter.com/'+twitter_data.user.screen_name +'/status/'+ twitter_data.id_str +'" target="_blank" class="control open">open</a><a href="https://twitter.com/intent/tweet?in_reply_to='+ twitter_data.id_str +'" class="control reply">reply</a><abbr class="timeago" title="'+ moment(twitter_data.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY").format("ddd MMM DD HH:mm:ss YYYY") +'" data-livestamp="'+ moment(twitter_data.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY").format("X") +'"></abbr></div>');
+
+            }
+                
+
+            AutoSize(twitter_data.retweeted_status.id_str, isEmbed);
             $('#'+twitter_data.retweeted_status.id_str).fadeIn();
             setTitle();
             ScrollFixed();
+            }
+            }
+            }
         },
 
         AutoSize = function(tweet_id_str, imageEmbed) {

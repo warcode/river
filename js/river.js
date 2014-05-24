@@ -247,7 +247,7 @@ var River = function() {
             {
                 //embed image
                 isEmbed = true;
-                $('#stream').prepend('<div id="'+twitter_data.id_str+'" class="tweet hidden"><div id="content" class="content"><img class="avatar" src="' + twitter_data.user.profile_image_url_https +'"><div class="user"> '+ twitter_data.user.name +' (<a href="https://twitter.com/'+ twitter_data.user.screen_name +'" target="_blank">@'+ twitter_data.user.screen_name +'</a>)</div><div class="message">'+ twttr.txt.autoLink(twitter_data.text, { urlEntities: twitter_data.entities.urls }) +'</div></div><a href="https://twitter.com/'+twitter_data.user.screen_name +'/status/'+ twitter_data.id_str +'" target="_blank" class="control open">open</a><a href="https://twitter.com/intent/tweet?in_reply_to='+ twitter_data.id_str +'" class="control reply">reply</a><abbr class="timeago" title="'+ moment(twitter_data.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY").format("ddd MMM DD HH:mm:ss YYYY") +'" data-livestamp="'+ moment(twitter_data.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY").format("X") +'"></abbr><div style="position: absolute; left: 90px; border-radius: 5px; bottom: 20px; overflow: hidden; height: 253px; width: 550px; box-shadow: 0 0 10px #33b5e5;"><a target="_blank" href="'+twitter_data.entities.media[0].media_url_https+'"><img src="'+twitter_data.entities.media[0].media_url_https+'" style="width: 100%;margin-top: -60%;"></a></div></div></div>');
+                $('#stream').prepend('<div id="'+twitter_data.id_str+'" class="tweet hidden"><div id="content" class="content"><img class="avatar" src="' + twitter_data.user.profile_image_url_https +'"><div class="user"> '+ twitter_data.user.name +' (<a href="https://twitter.com/'+ twitter_data.user.screen_name +'" target="_blank">@'+ twitter_data.user.screen_name +'</a>)</div><div class="message">'+ twttr.txt.autoLink(twitter_data.text, { urlEntities: twitter_data.entities.urls }) +'</div></div><a href="https://twitter.com/'+twitter_data.user.screen_name +'/status/'+ twitter_data.id_str +'" target="_blank" class="control open">open</a><a href="https://twitter.com/intent/tweet?in_reply_to='+ twitter_data.id_str +'" class="control reply">reply</a><abbr class="timeago" title="'+ moment(twitter_data.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY").format("ddd MMM DD HH:mm:ss YYYY") +'" data-livestamp="'+ moment(twitter_data.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY").format("X") +'"></abbr><div style="position: absolute; left: 90px; border-radius: 5px; bottom: 20px; overflow: hidden; height: 253px; width: 550px; box-shadow: 0 0 10px #33b5e5;"><a target="_blank" href="'+twitter_data.entities.media[0].media_url_https+'"><img src="'+twitter_data.entities.media[0].media_url_https+'" style="width: 100%;margin-top: -25%;"></a></div></div></div>');
 
             } else {
                 isEmbed = false;
@@ -291,7 +291,7 @@ var River = function() {
 
             if(imageEmbed) {
                 if(height <= 44) {
-                    $('div#'+tweet_id_str).css("min-height", 380-44);
+                    $('div#'+tweet_id_str).css("min-height", 355);
                 } else {
                     $('div#'+tweet_id_str).css("min-height", 380);
                 }

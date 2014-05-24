@@ -295,8 +295,11 @@ var River = function() {
                 } else {
                     $('div#'+tweet_id_str).css("min-height", 380);
                 }
-
-                $('div#'+tweet_id_str).children('div#imageEmbedContainer').children('a').children('img').css('margin-top', -(($('div#'+tweet_id_str).children('div#imageEmbedContainer').children('a').children('img').height()-253)/2))
+                
+                $('div#'+tweet_id_str).children('div#imageEmbedContainer').children('a').children('img').imagesLoaded(function(){
+                    $('div#'+tweet_id_str).children('div#imageEmbedContainer').children('a').children('img').css('margin-top', -(($('div#'+tweet_id_str).children('div#imageEmbedContainer').children('a').children('img').height()-253)/2))                
+                });
+                
             }
         },
         

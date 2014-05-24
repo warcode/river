@@ -302,7 +302,7 @@ var River = function() {
             }
 
             if(imageEmbed) {
-                if(height <= 44) {
+                if(height < 47) {
                     $('div#'+tweet_id_str).css("min-height", 355);
                 } else {
                     $('div#'+tweet_id_str).css("min-height", 380);

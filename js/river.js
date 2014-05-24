@@ -289,9 +289,12 @@ var River = function() {
                 $('div#'+tweet_id_str).css("min-height", 96 + ( height - 44));
             }
 
-            if(imageEmbed)
-            {
-                $('div#'+tweet_id_str).css("min-height", 380);
+            if(imageEmbed) {
+                if(height <= 44) {
+                    $('div#'+tweet_id_str).css("min-height", 380-44);
+                } else {
+                    $('div#'+tweet_id_str).css("min-height", 380);
+                }
             }
         },
         

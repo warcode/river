@@ -12,17 +12,17 @@ div#main {
 
 .res-800 {
     font-size: 120%;
-    zoom: 0.7;
+    zoom: 0.65;
 }
 .res-1280 {
     font-size: 110%;
-    zoom: 0.85;
+    zoom: 0.75;
 }
 .res-1680 {
-    zoom: 0.90;
+    zoom: 0.85;
 } 
 .res-1920 {
-    zoom: 1.05;
+    zoom: 0.9;
 } 
 .res-max {
     zoom: 1.1;

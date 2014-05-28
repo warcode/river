@@ -10,6 +10,25 @@ div#main {
 
 }
 
+.res-768 {
+    font-size: 120%;
+    zoom: 0.65;
+} 
+.res-800 {
+    font-size: 120%;
+    zoom: 0.7;
+} 
+.res-1080 {
+    zoom: 0.95;
+} 
+.res-1200 {
+    zoom: 1.05;
+} 
+.res-1440 {
+    zoom: 1.1;
+}
+
+
 div#river {
     width: 100%;
     background-color: #121417;

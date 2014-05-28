@@ -9,6 +9,7 @@
 	
   	<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="js/jquery.imagesloaded.min.js"></script>
+    <script type="text/javascript" src="js/restive.min.js"></script>
     <script type="text/javascript" src="js/moment.min.js"></script>
     <script type="text/javascript" src="js/livestamp.min.js"></script>
     <script type="text/javascript" src="js/socket.io.min.js"></script>
@@ -17,8 +18,12 @@
   	<script type="text/javascript" src="js/river.js"></script>
   	<script>
 		$(function() {
-			River.Init();
-      moment().format();
+            River.Init();
+            moment().format();
+            $('div#main').restive({
+                breakpoints: ['768', '800', '1080', '1200', '1440'],
+                classes: ['res-768', 'res-800', 'res-1080', 'res-1200', 'res-1440']
+            });
 		});
 	</script>
   </head>

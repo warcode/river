@@ -10,6 +10,10 @@ div#main {
 
 }
 
+.res-768 {
+    font-size: 123%;
+    zoom: 0.6;
+}
 .res-800 {
     font-size: 123%;
     zoom: 0.65;

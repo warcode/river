@@ -303,3 +303,20 @@ a {
     color: #33b5e5;
     text-decoration: none;
 }
+
+
+.embedContainer {
+    position: absolute;
+    left: 90px;
+    border-radius: 5px;
+    bottom: 20px;
+    overflow: hidden;
+    height: 253px;
+    width: 550px;
+    box-shadow: 0 0 10px #33b5e5;
+}
+
+.embedImage {
+    width: 100%;
+    margin-top: -25%;
+}

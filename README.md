@@ -16,6 +16,7 @@ Supports
 * Retweets (viewing)
 * Deleted tweets
 * Inline images
+* Responsive resizing based on viewport
 
 Planned
 * Options

@@ -21,7 +21,7 @@ var River = function() {
             $('#status').on('input', function() {
                 var count = 140 - $('#status').val().length;
                 $('.characters').html(count.toString());
-            })
+            });
 
             $('#river').append('<div id="stream"></div>');
 
@@ -120,7 +120,7 @@ var River = function() {
                             for (var i = length - 1; i >= 0; i--) {
 
                                 if (data_object[i].retweeted_status) {
-                                    Tweet.AddReTweet(data_object[i])
+                                    Tweet.AddReTweet(data_object[i]);
                                 } else {
                                     Tweet.Add(data_object[i]);
                                 }
@@ -329,7 +329,7 @@ var River = function() {
                         $('div#' + tweet_id_str).css("min-height", 370);
 
                         $('div#' + tweet_id_str).children('div#imageEmbedContainer').children('a').children('img').imagesLoaded(function() {
-                            $('div#' + tweet_id_str).children('div#imageEmbedContainer').children('a').children('img').css('margin-top', -(($('div#' + tweet_id_str).children('div#imageEmbedContainer').children('a').children('img').height() - 253) / 2))
+                            $('div#' + tweet_id_str).children('div#imageEmbedContainer').children('a').children('img').css('margin-top', -(($('div#' + tweet_id_str).children('div#imageEmbedContainer').children('a').children('img').height() - 253) / 2));
                         });
 
                     }

@@ -1,4 +1,4 @@
-/*jshint browser: true, noempty: false, jquery: true, unused: false*/
+/*jshint browser: true, noempty: false, jquery: true, unused: false, newcap: false*/
 var River = function() {
     var user = new Object;
     var setTitle = function() {};

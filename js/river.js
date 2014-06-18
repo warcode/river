@@ -1,3 +1,4 @@
+/*jslint browser: true*/
 var River = function() {
     var user = new Object;
     var setTitle = function() {};

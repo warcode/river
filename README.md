@@ -23,3 +23,4 @@ Planned
 * Reply clustering
 * Multi-line tweet formatting
 * Page personalization based on logged in user
+* Logins from multiple locations at the same time

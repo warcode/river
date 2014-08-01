@@ -148,9 +148,9 @@ var River = function() {
 
                 socket.on('rise-accepted', function(data) {
                     var keywordtest = localStorage.getItem('warcode.river.user.keyword');
-                    if(keywordtest === "yes")
+                    if(keywordtest)
                     {
-                        StreamByKeyword();
+                        StreamByKeyword(keywordtest);
                     }
                     else
                     {
@@ -192,13 +192,14 @@ var River = function() {
             }
         },
 
-        StreamByKeyword = function() {
+        StreamByKeyword = function(keyword) {
             if (user.hasTwitterAuth) {
                 $.ajax({
                     type: "GET",
                     url: "https://deny.io/river/user/streamkeyword",
                     data: {
-                        login_token: user.login_token
+                        login_token: user.login_token,
+                        keyword: keyword
                     },
                     dataType: 'json',
                     success: function(data, status, jqXHR) {

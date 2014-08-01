@@ -26,6 +26,12 @@ var River = function() {
 
             $('#river').append('<div id="stream"></div>');
 
+
+            var maxtweets = localStorage.getItem('warcode.river.user.maxtweets');
+            if(!maxtweets) {
+                localStorage.setItem('warcode.river.user.maxtweets', 300);
+            }
+
             Title();
             //Test();
             Login();
@@ -250,8 +256,9 @@ var River = function() {
         },
 
         PruneTweets = function() {
-            if($('.tweet').length > 300) { 
-                $('#stream .tweet:gt(300)').remove();
+            var max = +localStorage.getItem('warcode.river.user.maxtweets')
+            if($('.tweet').length > max) { 
+                $('#stream .tweet:gt('+max+')').remove();
             }
         },
 

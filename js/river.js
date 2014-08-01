@@ -147,7 +147,15 @@ var River = function() {
                 });
 
                 socket.on('rise-accepted', function(data) {
-                    Stream();
+                    var keywordtest = localStorage.getItem('warcode.river.user.keyword');
+                    if(keywordtest === "yes")
+                    {
+                        StreamByKeyword();
+                    }
+                    else
+                    {
+                        Stream();    
+                    }
                 });
 
                 socket.on('tweet', function(data) {
@@ -179,6 +187,22 @@ var River = function() {
                     dataType: 'json',
                     success: function(data, status, jqXHR) {
                         $('#stream').prepend('<div id="stream-start" class="tweet">STREAM STARTED</div>');
+                    }
+                });
+            }
+        },
+
+        StreamByKeyword = function() {
+            if (user.hasTwitterAuth) {
+                $.ajax({
+                    type: "GET",
+                    url: "https://deny.io/river/user/streamkeyword",
+                    data: {
+                        login_token: user.login_token
+                    },
+                    dataType: 'json',
+                    success: function(data, status, jqXHR) {
+                        $('#stream').prepend('<div id="stream-start" class="tweet">KEYWORD STREAM STARTED</div>');
                     }
                 });
             }

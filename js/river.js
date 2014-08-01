@@ -249,6 +249,12 @@ var River = function() {
             }
         },
 
+        PruneTweets = function() {
+            if($('.tweet').length > 300) { 
+                $('#stream .tweet:gt(300)').remove();
+            }
+        },
+
         Test = function() {
             Tweet.Add({
                 created_at: "Sat Jul 13 19:27:32 +0000 2013",
@@ -301,6 +307,7 @@ var River = function() {
                     $('#' + twitter_data.id_str).fadeIn();
                     setTitle();
                     ScrollFixed();
+                    PruneTweets();
                 },
 
                 AddReTweet = function(data) {
@@ -329,6 +336,7 @@ var River = function() {
                     $('#' + twitter_data.retweeted_status.id_str).fadeIn();
                     setTitle();
                     ScrollFixed();
+                    PruneTweets();
                 },
 
                 AutoSize = function(tweet_id_str, imageEmbed) {

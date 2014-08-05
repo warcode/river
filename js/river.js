@@ -262,6 +262,10 @@ var River = function() {
             }
         },
 
+        FinishExistingAnimations = function() {
+            $('.tweet').finish();
+        },
+
         Test = function() {
             Tweet.Add({
                 created_at: "Sat Jul 13 19:27:32 +0000 2013",
@@ -280,7 +284,7 @@ var River = function() {
             var counter = 0;
 
             var Add = function(data) {
-
+                    FinishExistingAnimations();
                     //console.log('TWEET');
                     //console.log(data);
 
@@ -318,7 +322,7 @@ var River = function() {
                 },
 
                 AddReTweet = function(data) {
-
+                    FinishExistingAnimations();
                     var twitter_data = data;
                     //console.log('RETWEET');
                     //console.log(data);

@@ -1,3 +1,4 @@
+/// <reference path="../typings/jquery/jquery.d.ts"/>
 /*jshint browser: true, noempty: false, jquery: true, unused: false, newcap: false*/
 var River = function() {
     var user = new Object;
@@ -141,7 +142,8 @@ var River = function() {
 
         Connect = function() {
             if (user.hasTwitterAuth) {
-
+                
+                socket = null;
                 socket = io.connect('https://deny.io/river/user/stream/socket');
 
                 socket.on('challenge', function(data) {
@@ -177,7 +179,9 @@ var River = function() {
                 });
 
                 socket.on('end', function(data) {
-                    $('#stream').prepend('<div id="stream-stop" class="tweet">STREAM END (TWITTER FAILED)</div>');
+                    $('#stream').prepend('<div id="stream-stop" class="tweet">Stream ended unexpectedly</div>');
+                    $('#stream').prepend('<div id="stream-starting" class="tweet">Attempting to reconnect</div>');
+                    Connect();
                 });
             }
         },

@@ -181,7 +181,6 @@ var River = function() {
                 socket.on('end', function(data) {
                     $('#stream').prepend('<div id="stream-stop" class="tweet">Stream ended unexpectedly</div>');
                     $('#stream').prepend('<div id="stream-starting" class="tweet">Attempting to reconnect</div>');
-                    Connect();
                 });
             }
         },

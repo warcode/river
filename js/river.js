@@ -10,7 +10,7 @@ var River = function() {
     var Init = function() {
             $('#main').html('<div id="river"></div>');
             $('#river').html('<div id="menubox"></div>');
-            $('#menubox').html('<div id="control-container" class="control-box"><div id="write-control" class="write-button"><a href="#">WRITE</a></div><div id="last-read-control" class="last-read-button"><a href="#">LAST READ</a></div><div id="twitter_signin" class="twitter-button"><a href="#" onclick="River.OAuth();"><img src="img/sign-in-with-twitter-gray.png" alt="Sign in with Twitter"></a></div></div>');
+            $('#menubox').html('<div id="control-container" class="control-box"><div id="write-control" class="write-button"><a href="#">WRITE</a></div><div id="last-read-control" class="last-read-button"><a href="#">LAST READ</a></div><div id="twitter_signin" class="river-login"><a href="#" onclick="River.OAuth();"><img src="img/sign-in-with-twitter-gray.png" alt="Sign in with Twitter"></a></div></div>');
             $('#river').append('<div id="msgbox"></div>');
             $('#msgbox').addClass('hidden');
             $('#write-control').click(function() {
@@ -26,7 +26,6 @@ var River = function() {
             });
 
             $('#river').append('<div id="stream"></div>');
-
 
             var maxtweets = localStorage.getItem('warcode.river.user.maxtweets');
             if(!maxtweets) {
@@ -56,14 +55,14 @@ var River = function() {
                         user.login_token = data.login_token;
                         user.hasTwitterAuth = data.hasTwitterAuth;
                         if (user.hasTwitterAuth) {
-                            $('.twitter-button').hide();
+                            $('.river-login').hide();
                             Timeline();
                         }
                         //console.log('created new user - token: %s, twitter: %s', data.login_token, data.hasTwitterAuth);
                     } else if (jqXHR.status === 200) {
                         user.hasTwitterAuth = data.hasTwitterAuth;
                         if (user.hasTwitterAuth) {
-                            $('.twitter-button').hide();
+                            $('.river-login').hide();
                             Timeline();
                         }
                         //console.log('existing user - token: %s, twitter: %s', data.login_token, data.hasTwitterAuth);

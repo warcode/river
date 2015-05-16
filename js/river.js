@@ -58,6 +58,9 @@ var River = function() {
                             $('.river-login').hide();
                             Timeline();
                         }
+                        else {
+                            Welcome();
+                        }
                         //console.log('created new user - token: %s, twitter: %s', data.login_token, data.hasTwitterAuth);
                     } else if (jqXHR.status === 200) {
                         user.hasTwitterAuth = data.hasTwitterAuth;
@@ -65,10 +68,16 @@ var River = function() {
                             $('.river-login').hide();
                             Timeline();
                         }
+                        else {
+                            Welcome();
+                        }
                         //console.log('existing user - token: %s, twitter: %s', data.login_token, data.hasTwitterAuth);
                     } else {
                         console.log(jqXHR.status);
                     }
+                },
+                error: function(data, status, jqXHR) {
+                    Welcome();
                 }
             });
         },

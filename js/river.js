@@ -367,6 +367,9 @@ var River = function() {
                     + '" data-livestamp="' + moment(date).format("X") + '"></abbr></div></div>');
                     AutoSize('welcome', false);
                     $('div#welcome').fadeIn();
+                    setTitle();
+                    ScrollFixed();
+                    PruneTweets();
                 },
 
                 AutoSize = function(tweet_id_str, imageEmbed) {

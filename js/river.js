@@ -72,6 +72,13 @@ var River = function() {
                 }
             });
         },
+        
+        Welcome = function() {
+            if(document.getElementById("welcome") === null)
+            {
+                Tweet.AddWelcome();
+            }
+        },
 
         Logout = function() {
             $.ajax({
@@ -352,6 +359,15 @@ var River = function() {
                     ScrollFixed();
                     PruneTweets();
                 },
+                
+                AddWelcome = function () {
+                    var date = new Date();
+                    $('#stream').prepend('<div id="welcome" class="tweet hidden"><div id="content" class="content"><img class="avatar" src="/img/emi.png"><div class="user"> EMI (<a href="https://twitter.com/emiishuman" target="_blank">@emiishuman</a>)</div>'
+                    +'<div class="message">Hi! This is river, a streaming twitter client. Click here for more information.</div></div><abbr class="timeago" title="' + moment(date).format("ddd MMM DD HH:mm:ss YYYY") 
+                    + '" data-livestamp="' + moment(date).format("X") + '"></abbr></div></div>');
+                    AutoSize('welcome', false);
+                    $('div#welcome').fadeIn();
+                },
 
                 AutoSize = function(tweet_id_str, imageEmbed) {
                     var height = $('div#' + tweet_id_str).children('#content').children('.message').height();
@@ -413,6 +429,7 @@ var River = function() {
             return {
                 Add: Add,
                 AddReTweet: AddReTweet,
+                AddWelcome: AddWelcome,
                 Delete: Delete,
                 Send: Send
             };

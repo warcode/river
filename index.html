@@ -1,36 +1,36 @@
 <!DOCTYPE html>
   <head>
-  	<meta charset="utf-8">
+    <meta charset="utf-8">
     <title>RIVER</title>
     <link rel="icon" type="image/png" href="https://deny.io/river/river.png">
-  	<link href='https://fonts.googleapis.com/css?family=PT+Sans|Oleo+Script:400,700|PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans|Oleo+Script:400,700|PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
     
     <link rel="stylesheet" href="css/style.css">
-	
-  	<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+  
+    <script type="text/javascript" src="js/newrelic.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="js/jquery.imagesloaded.min.js"></script>
     <script type="text/javascript" src="js/restive.min.js"></script>
     <script type="text/javascript" src="js/moment.min.js"></script>
     <script type="text/javascript" src="js/livestamp.min.js"></script>
     <script type="text/javascript" src="js/socket.io.min.js"></script>
     <script type="text/javascript" src="js/mustache.js"></script>
-  	<script type="text/javascript" src="js/twitter-text.min.js"></script>
-  	<script type="text/javascript" src="js/river.js"></script>
-  	<script>
-		$(function() {
+    <script type="text/javascript" src="js/twitter-text.min.js"></script>
+    <script type="text/javascript" src="js/river.js"></script>
+    <script>
+    $(function() {
             River.Init();
             moment().format();
             $('div#main').restive({
                 breakpoints: ['768','800', '1280', '1680', '1920', '9999'],
                 classes: ['res-768','res-800', 'res-1280', 'res-1680', 'res-1920', 'res-max']
             });
-		});
-	</script>
+    });
+  </script>
   </head>
   <body>
-  	<div id="main">
-
-  	</div>
+    <div id="main">
+    </div>
   </body>
 
 </html>

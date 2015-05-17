@@ -92,7 +92,7 @@ var River = function() {
         WelcomeExtra = function() {
             Tweet.AddWelcome('River uses the Twitter Streaming API to receive messages as fast as possible. The messages are automatically pushed to your browser and displayed.');
             setTimeout(function() {
-                Tweet.AddWelcome('This is a project made and used by @warc0de. It uses nodejs and socketio to achieve realtime updates. The source can be found at https://github.com/warcode/river.');
+                Tweet.AddWelcome('This is a project made and used by warcode. It uses nodejs and socketio to achieve realtime updates. The source can be found at https://github.com/warcode/river.');
             }, 4000);
             setTimeout(function() {
                 Tweet.AddWelcome('The twitter authentication token is stored in memory on the server. The initial 50 messages after a refresh are cached for 60 seconds in redis to prevent overloading the api.');

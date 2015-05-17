@@ -104,8 +104,11 @@ var River = function() {
                 Tweet.AddWelcome('Proper functionality is only tested in chromium-based browsers until otherwise requested.');
             }, 20000);
             setTimeout(function() {
-                Tweet.AddWelcome('Are you done reading and checking out the links? Cool. You should click the button now.');
+                Tweet.AddWelcome('Are you done reading and checking out the links? Cool. You can click the button now.');
             }, 60000);
+            setTimeout(function() {
+                Tweet.AddWelcome('Me? I\'ll just be back here keeping things operational. Thats what I do.');
+            }, 120000);
         },
 
         Logout = function() {

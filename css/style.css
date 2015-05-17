@@ -1,13 +1,22 @@
+html {
+    height: 99%;
+}
+
 body{
     font-family: 'PT Sans', sans-serif;
     font-size: 150%;
     color:#C0C0C0;
     margin: 0;
     background-color: #33b5e5;
+    height: 100%;
 }
 
 div#main {
+    height: 100%;
+}
 
+div#river {
+    height: 100%;
 }
 
 .res-768 {
@@ -303,7 +312,6 @@ a {
     color: #33b5e5;
     text-decoration: none;
 }
-
 
 .embedContainer {
     position: absolute;

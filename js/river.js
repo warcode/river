@@ -85,8 +85,27 @@ var River = function() {
         Welcome = function() {
             if(document.getElementById("welcome") === null)
             {
-                Tweet.AddWelcome();
+                Tweet.AddWelcome('Hi! This is river, a streaming twitter client. Click above to sign in using oAuth, or click <a href="#" onclick="River.WelcomeExtra();">here</a> for more information.');
             }
+        },
+        
+        WelcomeExtra = function() {
+            Tweet.AddWelcome('River uses the Twitter Streaming API to receive messages as fast as possible. The messages are automatically pushed to your browser and displayed.');
+            setTimeout(function() {
+                Tweet.AddWelcome('This is a project made and used by @warc0de. It uses nodejs and socketio to achieve realtime updates. The source can be found at https://github.com/warcode/river.');
+            }, 4000);
+            setTimeout(function() {
+                Tweet.AddWelcome('The twitter authentication token is stored in memory on the server. The initial 50 messages after a refresh are cached for 60 seconds in redis to prevent overloading the api.');
+            }, 8000);
+            setTimeout(function() {
+                Tweet.AddWelcome('The only tracking going on is newrelic to monitor and improve the service. Blocking it will not affect usage.');
+            }, 12000);
+            setTimeout(function() {
+                Tweet.AddWelcome('Proper functionality is only tested in chromium-based browsers until otherwise requested.');
+            }, 20000);
+            setTimeout(function() {
+                Tweet.AddWelcome('Are you done reading and checking out the links? Cool. You should click the button now.');
+            }, 60000);
         },
 
         Logout = function() {
@@ -369,10 +388,11 @@ var River = function() {
                     PruneTweets();
                 },
                 
-                AddWelcome = function () {
+                AddWelcome = function (text) {
+                    FinishExistingAnimations();
                     var date = new Date();
-                    $('#stream').prepend('<div id="welcome" class="tweet hidden"><div id="content" class="content"><img class="avatar" src="/img/emi.png"><div class="user"> EMI (<a href="https://twitter.com/emiishuman" target="_blank">@emiishuman</a>)</div>'
-                    +'<div class="message">Hi! This is river, a streaming twitter client. Click here for more information.</div></div><abbr class="timeago" title="' + moment(date).format("ddd MMM DD HH:mm:ss YYYY") 
+                    $('#stream').prepend('<div id="welcome" class="tweet hidden"><div id="content" class="content"><img class="avatar" src="img/emi.png"><div class="user"> EMI (<a href="https://twitter.com/emiishuman" target="_blank">@emiishuman</a>)</div>'
+                    +'<div class="message">'+twttr.txt.autoLink(text)+'</div></div><abbr class="timeago" title="' + moment(date).format("ddd MMM DD HH:mm:ss YYYY") 
                     + '" data-livestamp="' + moment(date).format("X") + '"></abbr></div></div>');
                     AutoSize('welcome', false);
                     $('div#welcome').fadeIn();
@@ -456,6 +476,7 @@ var River = function() {
         Connect: Connect,
         Stream: Stream,
         Scroll: Scroll,
-        Logout: Logout
+        Logout: Logout,
+        WelcomeExtra: WelcomeExtra
     };
 }();
